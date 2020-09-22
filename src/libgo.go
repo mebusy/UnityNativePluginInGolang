@@ -16,7 +16,7 @@ func go_Add(a, b int) int{
     log.Printf("%d + %d = %d\n", a, b, a+ b)
 
     if f_callback != nil {
-        C.bridge_func_callback_str_str( f_callback, fmt.Sprintf( "calculate: %d", a+b  ) )
+        C.bridge_func_callback_str_str( f_callback, C.CString(fmt.Sprintf( "calculate: %d", a+b  )) )
     }
 
     return a+b
@@ -29,12 +29,12 @@ func go_SendMsg( c *C.char ) int {
 }
 
 
-type Func_Callback func( *C.char ) *C.char
+// type Func_Callback func( *C.char ) *C.char
 
-var f_callback Func_Callback = nil
+var f_callback C.Callback_S_S = nil
 
 //export go_SetCallbackFunc
-func go_SetCallbackFunc( f Func_Callback ) {
+func go_SetCallbackFunc( f C.Callback_S_S ) {
     f_callback = f ;
 }
 
