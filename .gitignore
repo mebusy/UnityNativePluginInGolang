@@ -24,4 +24,9 @@ OSXBundle/OSXBundle.xcodeproj/project.xcworkspace/
 
 .DS_Store
 
+Unity_PluginTest/Library/
+Unity_PluginTest/Logs/
+Unity_PluginTest/Packages/
+Unity_PluginTest/Temp/
 
+*.bundle/
