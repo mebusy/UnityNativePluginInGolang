@@ -14,6 +14,7 @@ func main(){ }
 
 //export go_Add
 func go_Add(a, b int) int{
+    /*
     if InfoLogger == nil {
         file, err := os.OpenFile("/Volumes/WORK/WORK/mebusy_git_u3d_plugin_go/logs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
         if err != nil {
@@ -24,6 +25,7 @@ func go_Add(a, b int) int{
         WarningLogger = log.New(file, "WARNING: ", log.Ldate|log.Ltime|log.Lshortfile)
         ErrorLogger = log.New(file, "ERROR: ", log.Ldate|log.Ltime|log.Lshortfile)
     }
+    //*/
 
 
     InfoLogger.Printf("%d + %d = %d\n", a, b, a+ b)

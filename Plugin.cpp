@@ -8,7 +8,6 @@
 // Plugin itself
 
 #include "libgo.h"
-#include "helper.h"
 
 #include "stdio.h"
 
@@ -32,7 +31,7 @@ EXPORT_API extern void lib_SetCallbackFunc(Callback_S_S p0) {
     char * ret = p0( "from lib" ) ;
     printf( "%s:" , ret ) ;
     /*/
-    go_SetCallbackFunc( (void*) p0 );
+    go_SetCallbackFunc( p0 );
     //*/
 }
 
