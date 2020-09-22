@@ -17,7 +17,10 @@ extern "C"
 //
 EXPORT_API extern GoInt lib_Add(GoInt p0, GoInt p1) {
     return go_Add(p0, p1);
-}  
+}
 
+EXPORT_API extern GoInt lib_SendMsg(GoString p0) {
+    return go_SendMsg( p0 );
+}
 
 } // end of export C block

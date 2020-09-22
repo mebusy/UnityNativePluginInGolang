@@ -18,7 +18,7 @@ Build/
 dist/
 
 xcuserdata/
-xcshareddata/
+# xcshareddata/
 
 OSXBundle/OSXBundle.xcodeproj/project.xcworkspace/
 
