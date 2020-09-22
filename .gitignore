@@ -16,3 +16,6 @@
 #
 Build/
 dist/
+
+OSXBundle/OSXBundle.xcodeproj/project.xcworkspace/
+OSXBundle/OSXBundle.xcodeproj/xcuserdata/
