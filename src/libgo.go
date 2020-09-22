@@ -1,6 +1,6 @@
 package main
 
-// #include "../helper.h"
+// #include "helper.h"
 import "C"   // 必须紧跟c代码块，不能有空格
 
 
@@ -14,19 +14,6 @@ func main(){ }
 
 //export go_Add
 func go_Add(a, b int) int{
-    /*
-    if InfoLogger == nil {
-        file, err := os.OpenFile("/Volumes/WORK/WORK/mebusy_git_u3d_plugin_go/logs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
-        if err != nil {
-            log.Fatal(err)
-        }
-
-        InfoLogger = log.New(file, "INFO: ", log.Ldate|log.Ltime|log.Lshortfile)
-        WarningLogger = log.New(file, "WARNING: ", log.Ldate|log.Ltime|log.Lshortfile)
-        ErrorLogger = log.New(file, "ERROR: ", log.Ldate|log.Ltime|log.Lshortfile)
-    }
-    //*/
-
 
     InfoLogger.Printf("%d + %d = %d\n", a, b, a+ b)
 
@@ -35,11 +22,6 @@ func go_Add(a, b int) int{
         return -(a+b)
     }
 
-    if InfoLogger != nil {
-        return 902
-    } else {
-        return 901
-    }
 
     return a+b
 }
