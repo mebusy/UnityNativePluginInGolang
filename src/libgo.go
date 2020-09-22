@@ -1,32 +1,35 @@
 package main
 
+// #include "helper.h"
+import "C"   // 必须紧跟c代码块，不能有空格
+
+
 import (
     "fmt"
-    "C"
+    "log"
 )
 
 func main(){ }
 
 //export go_Add
 func go_Add(a, b int) int{
-    fmt.Printf("%d + %d = %d\n", a, b, a+ b)
+    log.Printf("%d + %d = %d\n", a, b, a+ b)
 
     if f_callback != nil {
-        ret := f_callback( fmt.Sprintf( "result is %d", a+b  )  )
-        fmt.Printf("callback resp: %s\n", ret )
+        C.bridge_func_callback_str_str( f_callback, fmt.Sprintf( "calculate: %d", a+b  ) )
     }
 
     return a+b
 }
 
 //export go_SendMsg
-func go_SendMsg( msg string ) int {
-    fmt.Printf( "go received msg %s\n", msg )
+func go_SendMsg( c *C.char ) int {
+    fmt.Printf( "go received msg %s\n", C.GoString( c ) )
     return -1
 }
 
 
-type Func_Callback func( string ) string
+type Func_Callback func( *C.char ) *C.char
 
 var f_callback Func_Callback = nil
 
@@ -34,3 +37,5 @@ var f_callback Func_Callback = nil
 func go_SetCallbackFunc( f Func_Callback ) {
     f_callback = f ;
 }
+
+
