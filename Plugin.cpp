@@ -8,8 +8,10 @@
 // Plugin itself
 
 #include "libgo.h"
+#include "helper.h"
 
 #include "stdio.h"
+
 
 // Link following functions C-style (required for plugins)
 extern "C"
@@ -25,19 +27,13 @@ EXPORT_API extern GoInt lib_SendMsg(char* p0) {
     return go_SendMsg( p0 );
 }
 
-typedef char* (*Callback_Str_Str)(const char* arg);
-
-EXPORT_API extern void lib_SetCallbackFunc(Callback_Str_Str p0) {
+EXPORT_API extern void lib_SetCallbackFunc(Callback_S_S p0) {
     /*
     char * ret = p0( "from lib" ) ;
     printf( "%s:" , ret ) ;
     /*/
     go_SetCallbackFunc( (void*) p0 );
     //*/
-}
-
-const char* bridge_func_callback_str_str(Callback_Str_Str f, char* s) {
-    return f(s);
 }
 
 } // end of export C block

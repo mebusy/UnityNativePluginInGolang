@@ -1,6 +1,6 @@
 package main
 
-// #include "helper.h"
+// #include "../helper.h"
 import "C"   // 必须紧跟c代码块，不能有空格
 
 
@@ -17,6 +17,7 @@ func go_Add(a, b int) int{
 
     if f_callback != nil {
         C.bridge_func_callback_str_str( f_callback, C.CString(fmt.Sprintf( "calculate: %d", a+b  )) )
+        return -(a+b)
     }
 
     return a+b

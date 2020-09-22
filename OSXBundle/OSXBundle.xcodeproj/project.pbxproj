@@ -17,6 +17,7 @@
 		F35C01C12519BB5700A97845 /* libgo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgo.a; path = ../dist/OSX/libgo.a; sourceTree = "<group>"; };
 		F35C01C22519BB5700A97845 /* libgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libgo.h; path = ../dist/OSX/libgo.h; sourceTree = "<group>"; };
 		F35C01C52519BEE600A97845 /* Plugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Plugin.cpp; path = ../Plugin.cpp; sourceTree = "<group>"; };
+		F35C01D5251A0DB900A97845 /* helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = helper.h; path = ../helper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +35,7 @@
 		F35C01AE2519B51100A97845 = {
 			isa = PBXGroup;
 			children = (
+				F35C01D5251A0DB900A97845 /* helper.h */,
 				F35C01C52519BEE600A97845 /* Plugin.cpp */,
 				F35C01C12519BB5700A97845 /* libgo.a */,
 				F35C01C22519BB5700A97845 /* libgo.h */,
