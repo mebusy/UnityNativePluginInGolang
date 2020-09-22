@@ -7,8 +7,9 @@ import (
 
 func main(){}
 
-//export Add
-func Add(a, b int) int{
+//export go_Add
+func go_Add(a, b int) int{
     fmt.Printf("%d + %d = %d\n", a, b, a+ b)
     return a+b
 }
+

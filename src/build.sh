@@ -6,5 +6,5 @@
 # OSX
 DIST="../dist/OSX/"
 mkdir -p $DIST
-GOOS=darwin GOARCH=amd64 go build -buildmode=c-archive -o $DIST/libgoOSX.a libgo.go
+GOOS=darwin GOARCH=amd64 go build -buildmode=c-archive -o $DIST/  libgo.go
 

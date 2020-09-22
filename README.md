@@ -8,4 +8,5 @@ dist/
     binary library code
 OSXBundle
     OSX bundle project
+    lib search path: `$PROJECT_DIR/../dist/OSX`
 
