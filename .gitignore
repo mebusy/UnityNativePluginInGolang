@@ -17,8 +17,11 @@
 Build/
 dist/
 
+xcuserdata/
+xcshareddata/
+
 OSXBundle/OSXBundle.xcodeproj/project.xcworkspace/
 
 .DS_Store
-xcshareddata/
+
 
