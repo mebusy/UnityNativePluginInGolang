@@ -1,6 +1,7 @@
 package main
 
 // #include "helper.h"
+// #include <stdlib.h>
 import "C"   // 必须紧跟c代码块，不能有空格
 
 
@@ -8,6 +9,7 @@ import (
     "fmt"
     "log"
     "os"
+    "unsafe"
 )
 
 func main(){ }
@@ -18,11 +20,11 @@ func go_Add(a, b int) int{
     InfoLogger.Printf("%d + %d = %d\n", a, b, a+ b)
 
     if f_callback != nil {
-        C.bridge_func_callback_str_str( f_callback, C.CString(fmt.Sprintf( "calculate: %d", a+b  )) )
-        return -(a+b)
+        // cstr uses C heap, you must free it
+        cstr := C.CString(fmt.Sprintf( "calculate: %d", a+b  ) )
+        defer C.free( unsafe.Pointer(cstr) )
+        C.bridge_func_callback_str_str( f_callback, cstr )
     }
-
-
     return a+b
 }
 
