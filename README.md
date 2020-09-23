@@ -10,3 +10,8 @@ OSXBundle
     OSX bundle project
     lib search path: `$PROJECT_DIR/../dist/OSX`
 
+
+Platform | Plugins
+--- | --- 
+OSX  | xcode -> OSX bundle
+
