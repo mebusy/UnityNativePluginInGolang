@@ -46,8 +46,8 @@ if [ "$PLATFORM" = "Android" ] ; then
 
     # Android
     TOOLCHAIN="$NDK/toolchains/llvm/prebuilt/darwin-x86_64"
-    # TARGET="armv7a-linux-androideabi"
-    TARGET="aarch64-linux-android"
+    TARGET="armv7a-linux-androideabi"
+    # TARGET="aarch64-linux-android"
     API=21
     CC=$TOOLCHAIN/bin/$TARGET$API-clang
     CXX=$TOOLCHAIN/bin/$TARGET$API-clang++
@@ -56,7 +56,7 @@ if [ "$PLATFORM" = "Android" ] ; then
     echo $DIST
     mkdir -p $DIST
     cp -f ../Plugin.cpp .
-    GOOS=android GOARCH=arm64  CGO_ENABLED=1 \
+    GOOS=android GOARCH=arm  CGO_ENABLED=1 \
         CC=$CC CXX="$CXX" \
         go build -v -x -ldflags "-w" -buildmode=c-shared -o $DIST/libgo.so  libgo/
 
