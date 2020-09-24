@@ -10,7 +10,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;&#10;cp -r pf $CODESIGNING_FOLDER_PATH  $PROJECT_DIR/../Unity_PluginTest/Assets/Plugins/&#10;">
+               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;echo from $CODESIGNING_FOLDER_PATH&#10;echo copy to $PROJECT_DIR/../Unity_PluginTest/Assets/Plugins/&#10;cp -r -f $CODESIGNING_FOLDER_PATH  $PROJECT_DIR/../Unity_PluginTest/Assets/Plugins/&#10;&#10;echo &quot;Post-actions done&quot;&#10;&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
