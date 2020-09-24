@@ -1,5 +1,5 @@
 // #if _MSC_VER // this is defined when compiling with Visual Studio
-#ifdef _WINDOWS_
+#ifdef _PLATFORM_WINDOWS
 #define EXPORT_API __declspec(dllexport) // Visual Studio needs annotating exported functions with this
 #else
 #define EXPORT_API // XCode does not need annotating exported functions, so define is empty
@@ -21,8 +21,8 @@ extern "C"
 //
 EXPORT_API extern GoInt lib_Add(GoInt p0, GoInt p1) {
 	// test whether _WINDOWS_ is defined
-	#ifdef _WINDOWS_
-	p1 += 1
+	#ifdef _PLATFORM_WINDOWS
+	p1 += 1 ;
 	#endif
     return go_Add(p0, p1);
 }
