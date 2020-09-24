@@ -20,6 +20,10 @@ extern "C"
 // The functions we will call from Unity.
 //
 EXPORT_API extern GoInt lib_Add(GoInt p0, GoInt p1) {
+	// test whether _WINDOWS_ is defined
+	#ifdef _WINDOWS_
+	p1 += 1
+	#endif
     return go_Add(p0, p1);
 }
 
