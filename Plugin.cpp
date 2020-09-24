@@ -8,7 +8,13 @@
 // ------------------------------------------------------------------------
 // Plugin itself
 
-#include "libgo.h"
+#ifdef PLATFORM_DARWIN
+    #include "libgo.h"
+#else
+    #include "_cgo_export.h"
+#endif
+
+
 
 #include <stdio.h>
 
