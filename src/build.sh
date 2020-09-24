@@ -1,4 +1,5 @@
 # to list all GOOS/GOARCH:  go tool dist list
+
 PLATFORM=$1
 
 if [ "$PLATFORM" = "" ] ; then
