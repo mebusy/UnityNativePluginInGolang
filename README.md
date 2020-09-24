@@ -14,6 +14,8 @@ OSXBundle
     lib search path: `$PROJECT_DIR/../dist/OSX`
 Win
     $ brew install mingw-w64
+Android
+    NDK: android-ndk-r20
 
 
 
