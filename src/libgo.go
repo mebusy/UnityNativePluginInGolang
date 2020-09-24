@@ -1,5 +1,6 @@
 package main
 
+// #cgo windows CFLAGS: -D_MSC_VER=1
 // #include "helper.h"
 // #include <stdlib.h>
 import "C"   // 必须紧跟c代码块，不能有空格
