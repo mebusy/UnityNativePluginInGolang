@@ -10,7 +10,7 @@ fi
 
 
 if [ "$PLATFORM" = "Darwin" ] ; then
-    echo Building Plugin for $PLATORM
+    echo Building Plugin for $PLATFORM
 
     # OSX
     DIST="../dist/OSX/"
@@ -23,7 +23,7 @@ if [ "$PLATFORM" = "Darwin" ] ; then
 fi
 
 if [ "$PLATFORM" = "Windows" ] ; then
-    echo Building Plugin for $PLATORM
+    echo Building Plugin for $PLATFORM
     
     # Win64
     DIST="../dist/Win64/"
@@ -33,11 +33,11 @@ if [ "$PLATFORM" = "Windows" ] ; then
     GOOS=windows GOARCH=amd64 CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc  CXX=x86_64-w64-mingw32-g++  go build -v -ldflags "-w" -buildmode=c-shared -o $DIST/libgo.dll  libgo/
     rm -f ./Plugin.cpp
 
-    mv $DIST/libgo.dll ../Unity_PluginTest/Assets/Plugins/
+    cp -f $DIST/libgo.dll ../Unity_PluginTest/Assets/Plugins/
 fi
 
 if [ "$PLATFORM" = "Android" ] ; then
-    echo Building Plugin for $PLATORM
+    echo Building Plugin for $PLATFORM
 
     # Android
     TOOLCHAIN="$NDK/toolchains/llvm/prebuilt/darwin-x86_64"
@@ -53,10 +53,11 @@ if [ "$PLATFORM" = "Android" ] ; then
     cp -f ../Plugin.cpp .
     GOOS=android GOARCH=arm  CGO_ENABLED=1 \
         CC=$CC CXX="$CXX" \
-        go build -v -x -ldflags "-w" -buildmode=c-shared -o $DIST/libgo.so  libgo/
+        go build -v -ldflags "-w" -buildmode=c-shared -o $DIST/libgo.so  libgo/
 
     rm -f ./Plugin.cpp
-    rm -f ./libgo.h
+
+    cp -f $DIST/libgo.so ../Unity_PluginTest/Assets/Plugins/Android/
 fi
 
 
