@@ -30,3 +30,5 @@ Unity_PluginTest/Packages/
 Unity_PluginTest/Temp/
 
 *.bundle/
+logs.txt
+
