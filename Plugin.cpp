@@ -9,7 +9,7 @@
 
 #include "libgo.h"
 
-#include "stdio.h"
+#include <stdio.h>
 
 
 // Link following functions C-style (required for plugins)
