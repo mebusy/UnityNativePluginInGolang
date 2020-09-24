@@ -20,3 +20,4 @@ GOOS=windows GOARCH=amd64 CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc  CXX=x86_64-w6
 rm -f ./Plugin.cpp
 rm -f ./libgo.h
 
+mv $DIST/libgo.dll ../Unity_PluginTest/Assets/Plugins/
