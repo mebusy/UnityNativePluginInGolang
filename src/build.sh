@@ -45,13 +45,13 @@ if [ "$PLATFORM" = "Android" ] ; then
     cp -f $DIST/libgo.h .
 
     # Android
-    ARM_GCC="$NDK_ROOT/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-gcc"
+    ARM_GCC="$NDK_ROOT/toolchains/llvm/prebuilt/darwin-x86_64/bin/armv7a-linux-androideabi21-clang"
 
-    DIST="../dist/Win64/"
+    DIST="../dist/Android/"
     echo $DIST
     mkdir -p $DIST
     cp -f ../Plugin.cpp .
-    GOOS=android GOARCH=arm CGO_ENABLED=1 CC=$ARM_GCC  go build -v -ldflags "-w" -buildmode=c-shared -o $DIST/libgo.so  libgo/
+    GOOS=android GOARCH=arm  CGO_ENABLED=1 CC=$ARM_GCC CXX="$ARM_GCC"++  go build -v -ldflags "-w" -buildmode=c-shared -o $DIST/libgo.so  libgo/
     rm -f ./Plugin.cpp
     rm -f ./libgo.h
 fi
