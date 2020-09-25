@@ -3,7 +3,7 @@
 PLATFORM=$1
 
 if [ "$PLATFORM" = "" ] ; then
-    echo "must specify a platform"
+    echo "must specify a platform Darwin|Windows|Android|iOS"
     exit 1
 fi
 
