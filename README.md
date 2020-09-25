@@ -15,6 +15,7 @@ env: MacOSX, cross compile to build plugin for other platform.
 - Win
     - `$ brew install mingw-w64`
 - Android
+    - [c++ runtime](https://developer.android.com/ndk/guides/cpp-support.html)
     - `$ wget https://dl.google.com/android/repository/android-ndk-r20-darwin-x86_64.zip` 
     - NDK: android-ndk-r20
     - in UNITY:  `Assets/Plugins/Android/libs/<ARM_ARCH>/`
