@@ -43,7 +43,7 @@ if [ "$PLATFORM" = "Android" ] ; then
     TOOLCHAIN="$NDK/toolchains/llvm/prebuilt/darwin-x86_64"
     TARGET="armv7a-linux-androideabi"
     # TARGET="aarch64-linux-android"
-    API=21
+    API=16
     CC=$TOOLCHAIN/bin/$TARGET$API-clang
     CXX=$TOOLCHAIN/bin/$TARGET$API-clang++
     
