@@ -40,12 +40,12 @@ if [ "$PLATFORM" = "Android" ] ; then
     echo Building Plugin for $PLATFORM
 
     # Android
-    TOOLCHAIN="$NDK/toolchains/llvm/prebuilt/darwin-x86_64"
-    TARGET="armv7a-linux-androideabi"
+    TOOLCHAIN="$NDK/../ndkR10eCgoToolchain"
+    TARGET="arm-linux-androideabi"
     # TARGET="aarch64-linux-android"
-    API=16
-    CC=$TOOLCHAIN/bin/$TARGET$API-clang
-    CXX=$TOOLCHAIN/bin/$TARGET$API-clang++
+    API=
+    CC=$TOOLCHAIN/bin/$TARGET$API-gcc
+    CXX=$TOOLCHAIN/bin/$TARGET$API-g++
     
     ARM_ARCH=armeabi-v7a
     DIST="../dist/Android/libs/$ARM_ARCH"
