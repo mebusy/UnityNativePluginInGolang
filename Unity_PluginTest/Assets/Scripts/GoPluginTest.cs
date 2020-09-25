@@ -13,7 +13,7 @@ public class GoPluginTest : MonoBehaviour
 #elif UNITY_IOS
  const string pluginDll = "__Internal" ;
 #elif UNITY_ANDROID
- const string pluginDll = "some lib name" ;
+ const string pluginDll = "go" ;
 #endif
 
 

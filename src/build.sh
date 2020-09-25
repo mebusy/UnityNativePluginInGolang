@@ -48,7 +48,7 @@ if [ "$PLATFORM" = "Android" ] ; then
     CXX=$TOOLCHAIN/bin/$TARGET$API-clang++
     
     ARM_ARCH=armeabi-v7a
-    DIST="../dist/Android/$ARM_ARCH"
+    DIST="../dist/Android/libs/$ARM_ARCH"
     echo $DIST
     mkdir -p $DIST
     cp -f ../Plugin.cpp .
@@ -58,7 +58,7 @@ if [ "$PLATFORM" = "Android" ] ; then
 
     rm -f ./Plugin.cpp
 
-    cp -f $DIST/libgo.so ../Unity_PluginTest/Assets/Plugins/Android/$ARM_ARCH/
+    cp -f $DIST/libgo.so ../Unity_PluginTest/Assets/Plugins/Android/libs/$ARM_ARCH/
 fi
 
 
