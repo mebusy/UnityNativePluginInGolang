@@ -21,7 +21,9 @@ env: MacOSX, cross compile to build plugin for other platform.
     - in UNITY:  `Assets/Plugins/Android/libs/<ARM_ARCH>/`
 
 ```bash
-sudo /Volumes/WORK/_Y/AndroidDev/android-ndk-r10e/build/tools/make-standalone-toolchain.sh --toolchain=arm-linux-androideabi-4.9 --platform=android-14 --install-dir=./ndkR10eCgoToolchain
+$NDK/build/tools/make-standalone-toolchain.sh --arch=arm --abis=armeabi-v7a --platform=android-16  --install-dir=ndkR10eCgoToolchain
+
+# --toolchain=arm-linux-androideabi-4.9 
 ```
 
 
