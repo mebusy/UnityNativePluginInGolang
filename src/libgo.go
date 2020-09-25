@@ -1,7 +1,8 @@
 package main
 
 // #cgo windows CPPFLAGS: -D_PLATFORM_WINDOWS=1
-// #cgo android CPPFLAGS: -march=armv7-a
+// #cgo android CPPFLAGS: -march=armv7-a  -mfpu=neon -mfloat-abi=hard
+// #cgo android LDFLAGS:  -Wl,--no-warn-mismatch
 // #include "helper.h"
 // #include <stdlib.h>
 import "C"   // 必须紧跟c代码块，不能有空格

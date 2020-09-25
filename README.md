@@ -26,6 +26,19 @@ $NDK/build/tools/make-standalone-toolchain.sh --arch=arm --abis=armeabi-v7a --pl
 # --toolchain=arm-linux-androideabi-4.9 
 ```
 
+```bash
+$ arm-linux-androideabi-gcc -print-multi-lib
+.;@Wl,--no-warn-mismatch
+armv7-a;@march=armv7-a@Wl,--no-warn-mismatch
+thumb;@mthumb@Wl,--no-warn-mismatch
+armv7-a/thumb;@march=armv7-a@mthumb@Wl,--no-warn-mismatch
+armv7-a/hard;@march=armv7-a@mfloat-abi=hard@Wl,--no-warn-mismatch
+armv7-a/thumb/hard;@march=armv7-a@mthumb@mfloat-abi=hard@Wl,--no-warn-mismatch
+
+# -mfpu=  e.g. vfpv3, neon
+```
+
+
 
 Platform | Plugins
 --- | --- 
