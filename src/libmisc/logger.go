@@ -13,7 +13,8 @@ var (
 )
 
 func SetLoggerFilePath( logfilepath string ) {
-    file, err := os.OpenFile( logfilepath  , os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
+    // file, err := os.OpenFile( logfilepath  , os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
+    file, err := os.Create( logfilepath )
     if err != nil {
         log.Println(err)
         return
