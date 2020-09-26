@@ -42,7 +42,7 @@ var f_callback C.Callback_S_S = nil
 
 //export go_SetCallbackFunc
 func go_SetCallbackFunc( f C.Callback_S_S ) {
-    lib.Log( "I", "%+v", f )
+    libmisc.Log( "I", "%+v", f )
     f_callback = f ;
 }
 
