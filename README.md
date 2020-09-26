@@ -35,7 +35,7 @@ armv7-a/thumb;@march=armv7-a@mthumb@Wl,--no-warn-mismatch
 armv7-a/hard;@march=armv7-a@mfloat-abi=hard@Wl,--no-warn-mismatch
 armv7-a/thumb/hard;@march=armv7-a@mthumb@mfloat-abi=hard@Wl,--no-warn-mismatch
 
-# -mfpu=  e.g. vfpv3, neon
+# -mfpu=  e.g. vfpv3, neon(此设置会强制使用 VFPv3-D32)
 ```
 
 
