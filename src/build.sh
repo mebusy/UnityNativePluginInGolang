@@ -55,6 +55,7 @@ if [ "$PLATFORM" = "Android" ] ; then
 
 
     cp -f $DIST/libgo.so ../Unity_PluginTest/Assets/Plugins/Android/libs/$ARM_ARCH/
+
 fi
 
 
