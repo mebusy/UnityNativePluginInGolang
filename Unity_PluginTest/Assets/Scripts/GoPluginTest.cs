@@ -19,11 +19,11 @@ public class GoPluginTest : MonoBehaviour
 
 
 	[DllImport (pluginDll)]
-	private static extern int lib_Add (int a,int b);
+	private static extern int go_Add (int a,int b);
     [DllImport (pluginDll)]
-    private static extern int lib_SendMsg(string p0);
+    private static extern int go_SendMsg(string p0);
     [DllImport (pluginDll)]
-    private static extern void lib_SetCallbackFunc(SimpleArgCallback p0);
+    private static extern void go_SetCallbackFunc(SimpleArgCallback p0);
 
     private delegate string SimpleArgCallback(string arg);
     private string SimpleArgCallbackUnityFun(string arg) {
@@ -39,11 +39,11 @@ public class GoPluginTest : MonoBehaviour
         Debug.Log( "test start" ) ;
 
         SimpleArgCallback sc = new SimpleArgCallback(SimpleArgCallbackUnityFun);
-        lib_SetCallbackFunc(sc);
+        go_SetCallbackFunc(sc);
 
-        Debug.Log( lib_Add(1,2) ) ;
+        Debug.Log( go_Add(1,2) ) ;
 
-        int ret = lib_SendMsg( "send from unity" );
+        int ret = go_SendMsg( "send from unity" );
         Debug.Log( "ret of SendMsg " + ret  ) ;
     }
 

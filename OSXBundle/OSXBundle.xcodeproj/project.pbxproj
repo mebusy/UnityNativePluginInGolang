@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F35C01C32519BB5700A97845 /* libgo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F35C01C12519BB5700A97845 /* libgo.a */; };
-		F35C01C62519BEE600A97845 /* Plugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35C01C52519BEE600A97845 /* Plugin.cpp */; };
+		F3BE474F2521888C00CDECF4 /* PluginOSX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3BE474E2521888C00CDECF4 /* PluginOSX.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,8 +16,8 @@
 		F35C01BA2519B51100A97845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F35C01C12519BB5700A97845 /* libgo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgo.a; path = ../dist/OSX/libgo.a; sourceTree = "<group>"; };
 		F35C01C22519BB5700A97845 /* libgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libgo.h; path = ../dist/OSX/libgo.h; sourceTree = "<group>"; };
-		F35C01C52519BEE600A97845 /* Plugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Plugin.cpp; path = ../Plugin.cpp; sourceTree = "<group>"; };
 		F35C01D9251A165D00A97845 /* helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = helper.h; path = ../src/helper.h; sourceTree = "<group>"; };
+		F3BE474E2521888C00CDECF4 /* PluginOSX.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PluginOSX.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,8 +35,8 @@
 		F35C01AE2519B51100A97845 = {
 			isa = PBXGroup;
 			children = (
+				F3BE474E2521888C00CDECF4 /* PluginOSX.cpp */,
 				F35C01D9251A165D00A97845 /* helper.h */,
-				F35C01C52519BEE600A97845 /* Plugin.cpp */,
 				F35C01C12519BB5700A97845 /* libgo.a */,
 				F35C01C22519BB5700A97845 /* libgo.h */,
 				F35C01B92519B51100A97845 /* OSXBundle */,
@@ -126,7 +126,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F35C01C62519BEE600A97845 /* Plugin.cpp in Sources */,
+				F3BE474F2521888C00CDECF4 /* PluginOSX.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
