@@ -49,12 +49,10 @@ if [ "$PLATFORM" = "Android" ] ; then
     DIST="../dist/Android/libs/$ARM_ARCH"
     echo $DIST
     mkdir -p $DIST
-    cp -f ../Plugin.cpp .
     GOOS=android GOARCH=arm  CGO_ENABLED=1 \
         CC=$CC CXX="$CXX" \
         go build -v -ldflags "-w" -buildmode=c-shared -o $DIST/libgo.so  libgo/
 
-    rm -f ./Plugin.cpp
 
     cp -f $DIST/libgo.so ../Unity_PluginTest/Assets/Plugins/Android/libs/$ARM_ARCH/
 fi
