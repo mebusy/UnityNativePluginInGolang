@@ -26,6 +26,15 @@ $NDK/build/tools/make-standalone-toolchain.sh --arch=arm --abis=armeabi-v7a --pl
 # --toolchain=arm-linux-androideabi-4.9 
 ```
 
+- iOS
+
+```bash
+xcrun lipo -create -arch arm64 $WORK/Dbconn-arm64.a -arch x86_64 $WORK/Dbconn-amd64.a -o ../../iosClient/indodict/Dbconn.framework/Versions/A/Dbconn
+
+-framework Foundation -lobjc
+```
+
+
 ```bash
 $ arm-linux-androideabi-gcc -print-multi-lib
 .;@Wl,--no-warn-mismatch

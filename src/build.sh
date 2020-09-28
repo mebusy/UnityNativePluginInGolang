@@ -58,6 +58,23 @@ if [ "$PLATFORM" = "Android" ] ; then
 
 fi
 
+if [ "$PLATFORM" = "iOS" ] ; then
+    echo Building Plugin for $PLATFORM
 
+    CLANG=`xcodebuild -find clang`
+    CLANGXX=`xcodebuild -find clang++`
+    # echo clang: "$CLANG"
+    SYSROOT=`xcrun --sdk iphoneos --show-sdk-path`
+
+    DIST="../dist/iOS/"
+    mkdir -p $DIST
+    GOOS=darwin GOARCH=arm64 CGO_ENABLED=1 \
+    CC=$CLANG CXX=$CLANGXX  \
+    CGO_LDFLAGS="$CGO_LDFLAGS -isysroot $SYSROOT -miphoneos-version-min=7.0 -fembed-bitcode -arch arm64 " \
+    CGO_CFLAGS="$CGO_CFLAGS   -isysroot $SYSROOT -miphoneos-version-min=7.0 -fembed-bitcode -arch arm64 " \
+    go build -v -ldflags "-w" -buildmode=c-archive -o $DIST/libgo.a  libgo/
+
+
+fi
 
 
